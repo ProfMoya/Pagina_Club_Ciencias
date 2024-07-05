@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-toggle .icon {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle .icon::before,
+.menu-toggle .icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle .icon::before {
+  top: -8px;
+}
+
+.menu-toggle .icon::after {
+  top: 8px;
+}
+
+.menu.open .icon {
+  background-color: transparent;
+}
+
+.menu.open .icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu.open .icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #f0f0f0;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 15px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.menu.open {
+  left: 0;
+}
